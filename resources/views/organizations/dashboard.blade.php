@@ -6,9 +6,9 @@
         <div class="col-md-2">
             Mitglieder
             <div class="d-flex flex-column">
-                <x-member :member="$organization->members->first()"></x-member>
-                <x-member :member="$organization->members->first()"></x-member>
-                <x-member :member="$organization->members->first()"></x-member>
+                @foreach($organization->members as $member)
+                    <x-member :member="$member"></x-member>
+                @endforeach
             </div>
         </div>
         <div class="col-md-2">
