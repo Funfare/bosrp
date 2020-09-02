@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::resource('organizations', 'OrganizationController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
