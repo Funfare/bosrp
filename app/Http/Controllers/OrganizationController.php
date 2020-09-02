@@ -50,8 +50,22 @@ class OrganizationController extends Controller
      */
     public function show(Organization $organization)
     {
-        //
+
     }
+
+/**
+     * Display the dashboard.
+     *
+     * @param  \App\Models\Organization  $organization
+     * @return \Illuminate\Http\Response
+     */
+    public function dashboard(Organization $organization)
+    {
+        $organization->load('positions', 'members.qualifications');
+        return view('organizations.dashboard', compact('organization'));
+
+    }
+
 
     /**
      * Show the form for editing the specified resource.

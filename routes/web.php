@@ -18,6 +18,15 @@ Route::get('/', function () {
 });
 
 Route::resource('organizations', 'OrganizationController');
+Route::prefix('organizations/{organization}')->name('organizations.')->group(function() {
+    Route::get('dashboard', 'OrganizationController@dashboard')->name('dashboard');
+
+    Route::resource('members', 'MemberController');
+    Route::resource('qualifications', 'QualificationController');
+    Route::resource('positions', 'PositionController');
+
+});
+
 
 Auth::routes();
 

@@ -36,6 +36,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('organizations.index') }}">{{ 'Organisationsliste' }}</a>
                         </li>
+                        @yield('topnav')
                     </ul>
 
                     <!-- Right Side Of Navbar -->
